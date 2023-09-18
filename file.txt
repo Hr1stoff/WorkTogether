@@ -1,0 +1,59 @@
+<template>
+  <div v-if="users.length > 0">
+    <ul v-for="user in users" :key="user.id">
+      <li>{{ user.name }}</li>
+    </ul>
+    <button @click="foo()">нажми на меня</button>
+  </div>
+  <h2 v-else>СУКА ОНО РАБОТАЕТ</h2>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      users: [
+        {
+          id: 1,
+          name: "Leanne Graham"
+        },
+        {
+          id: 2,
+          name: "Ervin Howell"
+        },
+        {
+          id: 3,
+          name: "Clementine Bauch"
+        },
+        {
+          id: 4,
+          name: "Patricia Lebsack"
+        },
+        {
+          id: 5,
+          name: "Chelsey Dietrich"
+        },
+        {
+          id: 6,
+          name: "Mrs. Dennis Schulist"
+        }
+      ]
+    }
+  },
+  computed: {
+
+
+  },
+  methods: {
+    foo() {
+      this.users.pop();
+      console.log(this.users);
+      return this.users;
+
+    }
+  }
+}
+
+</script>
+
+<style></style>
